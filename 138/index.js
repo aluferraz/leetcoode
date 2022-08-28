@@ -10,7 +10,9 @@ var copyRandomList = function (head) {
         let newNode = new Node(current.val, null, null);
         nodeMap.set(current, newNode);
         deepCopy.next = newNode;
+        //at the first pass, here we lost reference with dummy, but that is ok
         deepCopy = newNode;
+        
         current = current.next;
     }
     //Reset the pointers to the head
