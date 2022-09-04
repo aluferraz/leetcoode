@@ -3,7 +3,7 @@
  * @return {number}
  */
 
-
+//NOT FINISHED :(
 
 
 const mod_result = (Math.pow(10, 9) + 7);
@@ -60,12 +60,21 @@ var totalStrength = function (strength) {
     let result = 0;
     for (let i = 0; i < strength.length; i++) {
         let leftIdx = Math.max(left[i], 0);
-        let rightIdx = Math.min(right[i], (strength.length - 1));
+        let rightIdx = right[i];
+
         let leftAcc = presum[i] - presum[leftIdx];
         let rightAcc = presum[rightIdx] - presum[i];
-        let ln = i - leftIdx;
-        let rn = rightIdx - i;
-        result += ((strength[i] * ((rightAcc * ln) - (leftAcc * rn))) % mod_result);
+
+        let ln = i - leftIdx; // Number of subarrays with strength[i] as minimum
+        let rn = rightIdx - i; // Number of subarrays with strength[i] as minimum
+
+
+        const individualContribution = (
+            (
+                (strength[i] * ln * leftAcc) -
+                (strength[i] * rn * rightAcc)
+            ) % mod_result);
+        result += individualContribution;
     }
 
     debugger;
