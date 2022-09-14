@@ -1,4 +1,5 @@
 var MedianFinder = function () {
+    //THE KEY IS: LOWERS ARE MAX, GREATERS ARE MIN
     this.lowers = new MaxHeap();
     this.greaters = new MinHeap();
 };
@@ -149,10 +150,10 @@ medianFinder.addNum(2);
 console.log(medianFinder.findMedian());
 medianFinder.addNum(3);
 console.log(medianFinder.findMedian());
-medianFinder.addNum(4);
-console.log(medianFinder.findMedian());
-medianFinder.addNum(5);
-console.log(medianFinder.findMedian());
+// medianFinder.addNum(4);
+// console.log(medianFinder.findMedian());
+// medianFinder.addNum(5);
+// console.log(medianFinder.findMedian());
 
 
 // let medianFinder = new MedianFinder();
