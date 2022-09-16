@@ -12,13 +12,13 @@ var totalStrength = function (strength) {
     let NLE = getNextLesserElementIdx(strength);
     // we need to calculate the sum of every subarray
     //to do this, we use a prefixsum of a prefixsum (math proven on my notebook)
-    const prefixsum = getPrefixSum(strength);
-    const prefixsumOfPrefixSum = getPrefixSum(prefixsum);
+    const prefixsum = getPrefixSum(strength);// PrefixSum[0] = 0, prefixSum[1] = array[0]... So the prefixSum has one index more (the 0 at the beggining)
+    const prefixsumOfPrefixSum = getPrefixSum(prefixsum); //Similarly, the prefixSum of Prefixsum will have 2 indexes more than the strength array
     let result = BigInt(0);
     for (let i = 0; i < strength.length; i++) {
         //Contribution of a[i] as the min = a[i] * (( i-PLEIdx) * (NLEIdx i ))
-        const leftBound = BigInt((i - PLE[i])); // If we fill with -1, at idx 0 will be  0 - (-1) = 1. 
-        const rightBound = BigInt((NLE[i] - i)); // If we fill with size, at the last idx  will be  size - right = 1. 
+        const leftPartSize = BigInt((i - PLE[i])); // If we fill with -1, at idx 0 will be  0 - (-1) = 1. 
+        const rightPartSize = BigInt((NLE[i] - i)); // If we fill with size, at the last idx  will be  size - right = 1. 
         const currentEl = BigInt(strength[i]);
 
         //now we need to calculate the sum of every subarray
@@ -28,9 +28,10 @@ var totalStrength = function (strength) {
         let leftIdx = PLE[i] + 1;
         let rightIdx = NLE[i] + 1;
 
-        const prefixsumOfPrefixSumCurrentToRight = (leftBound * (((prefixsumOfPrefixSum[rightIdx] - prefixsumOfPrefixSum[i + 1]))));
+        //(DegreeOfFreedom * rightPart) - (DegreeOfFreedom * leftPart)
+        const prefixsumOfPrefixSumCurrentToRight = (leftPartSize * (((prefixsumOfPrefixSum[rightIdx] - prefixsumOfPrefixSum[i + 1]))));
         totalSumOfSubArrays += prefixsumOfPrefixSumCurrentToRight;
-        const prefixsumOfPrefixSumLeftToCurrent = (rightBound * (((prefixsumOfPrefixSum[i + 1] - prefixsumOfPrefixSum[leftIdx]))));
+        const prefixsumOfPrefixSumLeftToCurrent = (rightPartSize * (((prefixsumOfPrefixSum[i + 1] - prefixsumOfPrefixSum[leftIdx]))));
         totalSumOfSubArrays -= prefixsumOfPrefixSumLeftToCurrent;
 
         //Min(a[i,j]) * subArraySum(a[i,j])
