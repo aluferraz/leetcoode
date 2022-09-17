@@ -1,3 +1,49 @@
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+ */
+//T: O(N * logk) / S: O(N)
+var maxSlidingWindowLogN = function (nums, k) {
+    if (k === 0 || nums.length === 0) return [];
+    let maxHeap = new MaxHeap(); //K Space
+    //First we find the max in the window
+    for (let i = 0; i < k; i++) {
+        //O(k * logk) T
+        maxHeap.insert({
+            key: i,
+            value: nums[i]
+        });
+    }
+
+    let result = []; // O(N)
+    //Edge case, k ===  nums.length
+    let currentMax = maxHeap.peek();
+    result.push(currentMax.value);
+    let leftWindowPos = 0;
+    maxHeap.update(leftWindowPos, -Infinity, "DOWN");// We can do this, because if k === 0 we return [],
+    //so the following loop will never start at 0.
+    //O(K*logK)
+    leftWindowPos++;
+    for (let i = k; i < nums.length; i++) {
+        maxHeap.insert(
+            {
+                key: i,
+                value: nums[i]
+            }
+        );
+        currentMax = maxHeap.peek();
+        result.push(currentMax.value);
+        //Before increnting i, we update the left element of the window to -Infinity
+        maxHeap.update(leftWindowPos, -Infinity, "DOWN");
+        leftWindowPos++;
+
+    }
+    return result;
+
+};
+
+
 
 class MaxHeap {
     constructor(array) {
@@ -95,3 +141,4 @@ class MaxHeap {
         return this.heap[0];
     }
 }
+maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3)
