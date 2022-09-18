@@ -1,6 +1,14 @@
+const MAX_HEAP = function (a, b) {
+    return a.value > b.value
+}
+const MIN_HEAP = function (a, b) {
+    return a.value < b.value
+}
 
-class MaxHeap {
-    constructor(array) {
+
+class Heap {
+    constructor(compare, array) {
+        this.fn = compare;
         if (array === undefined || array.length === 0) {
             this.heap = [];
             this.vertexMap = {};
@@ -33,12 +41,12 @@ class MaxHeap {
         while (childOneIdx <= endIdx) {
             const childTwoIdx = currentIdx * 2 + 2 <= endIdx ? currentIdx * 2 + 2 : -1;
             let idxToSwap;
-            if (childTwoIdx !== -1 && heap[childTwoIdx].value > heap[childOneIdx].value) {
+            if (childTwoIdx !== -1 && this.fn(heap[childTwoIdx], heap[childOneIdx])) {
                 idxToSwap = childTwoIdx;
             } else {
                 idxToSwap = childOneIdx;
             }
-            if (heap[idxToSwap].value > heap[currentIdx].value) {
+            if (this.fn(heap[idxToSwap], heap[currentIdx])) {
                 this.swap(currentIdx, idxToSwap, heap);
                 currentIdx = idxToSwap;
                 childOneIdx = currentIdx * 2 + 1;
@@ -51,7 +59,7 @@ class MaxHeap {
     // O(log(n)) time | O(1) space
     siftUp(currentIdx, heap) {
         let parentIdx = Math.floor((currentIdx - 1) / 2);
-        while (currentIdx > 0 && heap[currentIdx].value > heap[parentIdx].value) {
+        while (currentIdx > 0 && this.fn(heap[currentIdx], heap[parentIdx])) {
             this.swap(currentIdx, parentIdx, heap);
             currentIdx = parentIdx;
             parentIdx = Math.floor((currentIdx - 1) / 2);
