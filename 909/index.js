@@ -3,7 +3,6 @@
  * @return {number}
  */
 var snakesAndLadders = function (board) {
-    debugger;
     let queue = [];
     const boardSize = board.length;
     const target = boardSize * boardSize;
@@ -51,8 +50,8 @@ function labelToPos(label, size) {
     return [row, col]
 
 }
-
-snakesAndLadders([[-1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -1], [-1, 35, -1, -1, 13, -1], [-1, -1, -1, -1, -1, -1], [-1, 15, -1, -1, -1, -1]])
+snakesAndLadders([[-1,-1],[-1,3]])
+//snakesAndLadders([[-1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -1], [-1, 35, -1, -1, 13, -1], [-1, -1, -1, -1, -1, -1], [-1, 15, -1, -1, -1, -1]])
 
 //snakesAndLadders([[-1, -1, -1, -1, 48, 5, -1], [12, 29, 13, 9, -1, 2, 32], [-1, -1, 21, 7, -1, 12, 49], [42, 37, 21, 40, -1, 22, 12], [42, -1, 2, -1, -1, -1, 6], [39, -1, 35, -1, -1, 39, -1], [-1, 36, -1, -1, -1, -1, 5]]);
 

@@ -6,7 +6,7 @@
 const PLATE = '*';
 const CANDLE = '|';
 var platesBetweenCandles = function (s, queries) {
-    debugger
+   // debugger
     let previousCandles = getPreviousCandles(s); //O(N) - Monotonic stack
     let nextCandles = getNextCandles(s);//O(N)  Monotonic stack
     let presumPlates = getPresumPlates(s) // O(N) -> Could do the tree in one pass, but the code would be very hard to read
@@ -71,4 +71,4 @@ function getPresumPlates(s) {
     }
     return presumPlates;
 }
-platesBetweenCandles("||**||**|*", [[3,8]])
+//platesBetweenCandles("||**||**|*", [[3,8]])

@@ -76,6 +76,18 @@ class Heap {
         this.siftDown(0, this.heap.length - 1, this.heap);
         return node;
     }
+
+
+    removeByKey(key) {
+        if (this.isEmpty()) return;
+        let elementToRemoveIdx = this.vertexMap[key];
+        let elementToRemove = this.heap[elementToRemoveIdx];
+        this.swap(elementToRemoveIdx, this.heap.length - 1, this.heap);
+        this.heap.pop();
+        delete this.vertexMap[elementToRemove.key];
+        this.siftDown(elementToRemoveIdx, this.heap.length - 1, this.heap);
+    }
+
     insert(obj) {
         this.heap.push(obj);
         let newValueIdx = this.heap.length - 1;
