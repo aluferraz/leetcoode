@@ -1,8 +1,11 @@
 
 
-let target = ["TicTacToe","move","move","move","move","move","move","move"]
-let input = [[3],[0,0,1],[0,2,2],[2,2,1],[1,1,2],[2,0,1],[1,0,2],[2,1,1]]
-let varname = "ticTacToe";
+
+
+
+let target = ["SORTracker", "add", "add", "add", "add", "get", "get", "get", "get"]
+let input = [[], ['"happy"', 100000], ['"thanks"', 100000], ['"giving"', 99999], ['"everyone"', 11111], [], [], [], []]
+let varname = "sortTracker";
 isClass = true;
 
 
