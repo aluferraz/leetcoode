@@ -1,8 +1,38 @@
+/**
+ * @param {string[]} words
+ * @param {number} k
+ * @return {string[]}
+ */
+var topKFrequent = function (words, k) {
+
+    let freqCount = {};
+    for (let i = 0; i < words.length; i++) {
+        const word = words[i];
+        if (!(word in freqCount)) {
+            freqCount[word] = {
+                freq: 0,
+                word: word
+            };
+        }
+        freqCount[word].freq++;
+    }
+    let arrayOfFreq = [];
+    for (let word in freqCount) {
+        arrayOfFreq.push(freqCount[word]);
+    }
+    let maxHeap = new Heap(MAX_HEAP, arrayOfFreq);
+    let result = [];
+    for (let i = 0; i < k; i++) {
+        if (maxHeap.size() === 0) break;
+        result.push(maxHeap.remove().word)
+    }
+    return result;
+
+};
+
 const MAX_HEAP = function (a, b) {
-    return a > b
-}
-const MIN_HEAP = function (a, b) {
-    return a < b
+    if (a.freq === b.freq) return a.word < b.word;
+    return a.freq > b.freq
 }
 
 
@@ -89,3 +119,5 @@ class Heap {
         return this.heap.length;
     }
 }
+
+console.log(topKFrequent(["i", "love", "leetcode", "i", "love", "coding"], 2))

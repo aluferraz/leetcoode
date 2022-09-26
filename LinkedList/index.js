@@ -1,4 +1,14 @@
 
+class Node {
+
+    constructor(value, next = null, prev = null) {
+        this.value = value;
+        this.next = next;
+        this.prev = prev;
+    }
+
+}
+
 class DoublyLinkedList {
     constructor() {
         this.head = null;

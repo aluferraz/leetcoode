@@ -2,10 +2,10 @@
 
 
 
+let target =["RandomizedSet","insert","insert","remove","insert","remove","getRandom"]
 
-let target = ["SORTracker", "add", "add", "add", "add", "get", "get", "get", "get"]
-let input = [[], ['"happy"', 100000], ['"thanks"', 100000], ['"giving"', 99999], ['"everyone"', 11111], [], [], [], []]
-let varname = "sortTracker";
+let input =[[],[0],[1],[0],[2],[1],[]]
+let varname = "randomizedSet";
 isClass = true;
 
 

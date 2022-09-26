@@ -1,0 +1,15 @@
+{
+  "name": "import_classes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@datastructures-js/priority-queue": "4.1",
+    "@datastructures-js/queue": "4.1"
+  }
+}
