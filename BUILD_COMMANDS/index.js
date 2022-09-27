@@ -2,10 +2,11 @@
 
 
 
-let target =["RandomizedSet","insert","insert","remove","insert","remove","getRandom"]
+let target = ["FirstUnique","add","add","showFirstUnique"]
 
-let input =[[],[0],[1],[0],[2],[1],[]]
-let varname = "randomizedSet";
+
+let input =[[[1]],[1],[1],[]]
+let varname = "firstUnique";
 isClass = true;
 
 
