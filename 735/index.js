@@ -1,3 +1,44 @@
+/**
+ * @param {number[]} asteroids
+ * @return {number[]}
+ */
+var asteroidCollision = function (array) {
+    if (array.length === 0) return 0;
+    let stack = [];
+    let result = new DoublyLinkedList();
+    let nodeMap = new Map();
+    let dummyTail = new Node(0);
+    result.setTail(dummyTail);
+    for (let i = array.length - 1; i >= 0; i--) {
+        while (stack.length > 0 && collision(array[i], array[stack[stack.length - 1]])) {
+            let collisionResult = calculateCollision(array[i], array[stack[stack.length - 1]]);
+            let nodeIdx = stack.pop();
+            let nextNode = nodeMap.get(nodeIdx);
+            result.remove(nextNode);
+            nodeMap.delete(nodeIdx);
+            array[i] = collisionResult;
+            if (collisionResult === 0) break;
+        }
+        if (array[i] === 0) continue;
+        stack.push(i);
+        let node = new Node(array[i]);
+        result.insertBefore(result.head, node);
+        nodeMap.set(i, node);
+    }
+    result.remove(dummyTail);
+    return result.toArray();
+
+};
+
+function calculateCollision(value, prevValue) {
+    if (Math.abs(value) === Math.abs(prevValue)) return 0;
+    if (Math.abs(value) > Math.abs(prevValue)) return value;
+    return prevValue;
+}
+
+function collision(a, b) {
+    return (a >= 0 && b < 0);
+}
 
 class Node {
 
@@ -18,7 +59,7 @@ class DoublyLinkedList {
         if (array.length === 0) return;
         this.setHead(new Node(array[0]));
         for (let i = 1; i < array.length; i++) {
-            this.insertAfter(this.tail, new Node(array[1]));
+            this.insertAfter(this.tail, new Node(array[i]));
         }
         return this;
     }
@@ -131,3 +172,5 @@ class DoublyLinkedList {
         node.next = null;
     }
 }
+//DEBUG
+console.log(asteroidCollision([-2,2,-1,-2]));
