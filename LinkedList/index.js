@@ -14,6 +14,13 @@ class DoublyLinkedList {
         this.head = null;
         this.tail = null;
     }
+    append(node) {
+        if (this.head === null) {
+            this.setHead(node);
+        } else {
+            this.insertAfter(this.tail, node)
+        }
+    }
     fromArray(array) {
         if (array.length === 0) return;
         this.setHead(new Node(array[0]));
