@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LeetcodeEditor">
+    <option name="projectConfig">
+      <map>
+        <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/en/[2096]Step-By-Step Directions From a Binary Tree Node to Another.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/editor/en/doc/content/[2096]Step-By-Step Directions From a Binary Tree Node to Another.md" />
+              <option name="frontendQuestionId" value="leetcode.com2096" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/editor/en/[2096]Step-By-Step Directions From a Binary Tree Node to Another.java" />
+              <option name="titleSlug" value="step-by-step-directions-from-a-binary-tree-node-to-another" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/editor/en/[2096]Step-By-Step Directions From a Binary Tree Node to Another.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/editor/en/doc/content/[2096]Step-By-Step Directions From a Binary Tree Node to Another.md" />
+              <option name="frontendQuestionId" value="leetcode.com2096" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/editor/en/[2096]Step-By-Step Directions From a Binary Tree Node to Another.java" />
+              <option name="titleSlug" value="step-by-step-directions-from-a-binary-tree-node-to-another" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/editor/en/[278]First Bad Version.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/editor/en/doc/content/[278]First Bad Version.md" />
+              <option name="frontendQuestionId" value="leetcode.com278" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/editor/en/[278]First Bad Version.java" />
+              <option name="titleSlug" value="first-bad-version" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/editor/en/[35]Search Insert Position.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/editor/en/doc/content/[35]Search Insert Position.md" />
+              <option name="frontendQuestionId" value="leetcode.com35" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/editor/en/[35]Search Insert Position.java" />
+              <option name="titleSlug" value="search-insert-position" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/editor/en/[704]Binary Search.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/editor/en/doc/content/[704]Binary Search.md" />
+              <option name="frontendQuestionId" value="leetcode.com704" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/editor/en/[704]Binary Search.java" />
+              <option name="titleSlug" value="binary-search" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
