@@ -1,8 +1,4 @@
-let input = [
-         236,
-    104,      701,
-null, 227, null, 911
-]
+let input = [5,1,2,3,null,6,4]
 
 
 let result = [];
