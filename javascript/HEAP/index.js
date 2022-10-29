@@ -114,4 +114,7 @@ class Heap {
     peek() {
         return this.heap[0];
     }
+    size() {
+        return this.heap.length;
+    }
 }
